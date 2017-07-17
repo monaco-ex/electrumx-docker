@@ -1,5 +1,5 @@
 FROM ubuntu
-MAINTAINER followtheart "followtheart@outlook.com"
+MAINTAINER Cryptcoin Junkey "cryptcoin.junkey@gmail.com"
 
 RUN apt-get update \
     && apt-get install -y software-properties-common --no-install-recommends \
