@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTAINER followtheart "followtheart@outlook.com"
 
 RUN apt-get update \
