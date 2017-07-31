@@ -1,4 +1,4 @@
-FROM ubuntu
+FROM ubuntu:16.04
 MAINTAINER Cryptcoin Junkey "cryptcoin.junkey@gmail.com"
 
 RUN apt-get update \
@@ -18,7 +18,7 @@ RUN apt-get update \
     && groupadd -r electrumx \
     && useradd -s /bin/bash -m -g electrumx electrumx \
     && cd /home/electrumx \
-    && git clone https://github.com/monaco-ex/electrumx.git -b master-monacoin\
+    && git clone https://github.com/kyuupichan/electrumx.git -b 1.0.15 \
     && chown -R electrumx:electrumx electrumx && cd electrumx \
     && chown -R electrumx:electrumx /log /db /env \
     && python3.6 setup.py install
