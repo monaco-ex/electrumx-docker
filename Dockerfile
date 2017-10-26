@@ -18,7 +18,7 @@ RUN apt-get update \
     && groupadd -r electrumx \
     && useradd -s /bin/bash -m -g electrumx electrumx \
     && cd /home/electrumx \
-    && git clone https://github.com/kyuupichan/electrumx.git -b 1.1.2 \
+    && git clone https://github.com/kyuupichan/electrumx.git -b 1.2 \
     && chown -R electrumx:electrumx electrumx && cd electrumx \
     && chown -R electrumx:electrumx /log /db /env \
     && python3.6 setup.py install
