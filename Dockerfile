@@ -12,6 +12,7 @@ RUN apt-get update \
     && ln -s /usr/bin/python3.6 /usr/bin/python3 \
     && wget https://bootstrap.pypa.io/get-pip.py -O- | python3.6 \
     && pip install scrypt \
+    && pip install plyvel==0.9 pylru aiohttp --upgrade \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*  \
     && mkdir /log /db /env \
