@@ -1,24 +1,18 @@
-FROM ubuntu
-MAINTAINER followtheart "followtheart@outlook.com"
+FROM ubuntu:18.04
+MAINTAINER Cryptcoin Junkey "cryptcoin.junkey@gmail.com"
 
 RUN apt-get update \
-    && apt-get install -y software-properties-common --no-install-recommends \
-    && add-apt-repository -y ppa:jonathonf/python-3.6 \
-    && apt-get update \
     && apt-get install -y --no-install-recommends \
        python3.6 python3.6-dev libleveldb-dev wget git \
-       libssl-dev daemontools nano build-essential \
-    && rm /usr/bin/python3 \
-    && ln -s /usr/bin/python3.6 /usr/bin/python3 \
-    && wget https://bootstrap.pypa.io/get-pip.py -O- | python3.6 \
-    && pip install scrypt \
+       libssl-dev daemontools nano build-essential python3-pip python3-distutils python3-setuptools \
+    && pip3 install scrypt \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*  \
     && mkdir /log /db /env \
     && groupadd -r electrumx \
     && useradd -s /bin/bash -m -g electrumx electrumx \
     && cd /home/electrumx \
-    && git clone https://github.com/kyuupichan/electrumx.git  -b 1.3 \
+    && git clone https://github.com/kyuupichan/electrumx.git  -b 1.4 \
     && chown -R electrumx:electrumx electrumx && cd electrumx \
     && chown -R electrumx:electrumx /log /db /env \
     && python3.6 setup.py install
