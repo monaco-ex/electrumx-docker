@@ -2,7 +2,8 @@ FROM ubuntu:18.04
 MAINTAINER Cryptcoin Junkey "cryptcoin.junkey@gmail.com"
 
 RUN apt-get update \
-    && apt-get install -y wget git python3.7 python3.7-dev python3.7-distutils libleveldb-dev \
+    && apt-get upgrade -y \
+    && apt-get install -y wget git python3.7 python3.7-dev python3.7-distutils libleveldb-dev daemontools \
     && wget https://bootstrap.pypa.io/get-pip.py \
     && python3.7 get-pip.py \
     && pip3 install setuptools --upgrade \
