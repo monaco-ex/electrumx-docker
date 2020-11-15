@@ -13,7 +13,7 @@ RUN apt-get update \
     && groupadd -r electrumx \
     && useradd -s /bin/bash -m -g electrumx electrumx \
     && cd /home/electrumx \
-    && git clone https://github.com/kyuupichan/electrumx.git  -b 1.15.0 \
+    && git clone https://github.com/spesmilo/electrumx.git  -b 1.15.0 \
     && chown -R electrumx:electrumx electrumx && cd electrumx \
     && chown -R electrumx:electrumx /log /db /env \
     && python3.7 setup.py install
